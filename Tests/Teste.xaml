@@ -1,0 +1,137 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Teste" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="989,819" sap2010:WorkflowViewState.IdRef="Teste_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sg="clr-namespace:System.Globalization;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="39">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>Evoluze_Roboluze.Util</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Evoluze.Roboluze</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Teste" sap:VirtualizedContainerService.HintSize="476,754" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:GenericValue" Name="ValorServico" />
+      <Variable x:TypeArguments="x:String" Name="Valor" />
+      <Variable x:TypeArguments="x:String" Name="Vencimento" />
+      <Variable x:TypeArguments="x:String" Name="CNPJ" />
+      <Variable x:TypeArguments="x:Boolean" Name="SelecionaSacado" />
+      <Variable x:TypeArguments="s:String[]" Name="ArrayDados" />
+      <Variable x:TypeArguments="s:DateTime" Name="DataVencimento" />
+      <Variable x:TypeArguments="sg:CultureInfo" Name="cultureInfo" />
+      <Variable x:TypeArguments="sd:DataTable" Name="Data" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Internet Banking Banco Inter" sap:VirtualizedContainerService.HintSize="434,662" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="0d382a81-0d28-485d-8fa7-8883035573c0" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,446" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NHover DisplayName="Hover 'Conta digital'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NHover_1" ScopeIdentifier="0d382a81-0d28-485d-8fa7-8883035573c0" Version="V1">
+              <uix:NHover.Target>
+                <uix:TargetAnchorable BrowserURL="https://contadigitalpj.bancointer.com.br/comum/home.jsf" DesignTimeRectangle="371, 256, 160, 21" ElementType="Text" FriendlyName="'Conta digital'" FullSelectorArgument="&lt;webctrl aaname='Conta digital' parentid='Menu' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Conta digital' parentid='Menu' tag='SPAN' type='' check:text='Conta digital' /&gt;" Guid="da90a705-6cd6-4808-8e11-7ad054e896a3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKQAAAAZCAYAAAC/4YXqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARUSURBVHhe7Zpfa+JMFIf3875fYC/WCwsKr2JRVERQ0UKQgC1twQuXVoS2YCEsKqKhXdCLXCgYkCAijBe/PePO2kRN/bMKcZnnph0d42nnyZxzRr9AIvEQUkiJp5BCSjyFFFLiKaSQEk8hhZR4ijMUcgbT0NHp6jDMmXjM+zBrAIuJAcGsMWzDT9ln7jpzTM0RpmLkdc5KSOu9jEQggnBGRVFVkAhFcJF5hHHM/7bZRv19LAbHYo5mPoZSXwyho+iP4dYQw09Zmbt3fAa+X2ZRPxMjz0fIYQXhQAH14Vw8wJnBqGVJyjos8chf01JwcfNTDI7FqpB/wd7xSSFPwATNTAy51kSM7YxQjSdtu82cdtJnlPIFJDIKSq8/belqjM7DM3qmjie+w6YKKNbaMMWz024ZucsI/vOnkVPKaP6xnI3Qqd0hl8kikb9GtTvakkJnGLTKuBLz68Z4RUgexyN6y4vY5meu8WRMYLyWoS0C+5h7WHxSyOPD2rjyq+jsUEhZPxQE47RYJIFl9aGpaQTVtpCSFofSfDjPnx/BMvuoK7HFjrO4NBvDfMnia16DuazbxtDoZojeNzCwJlSP6fgej+Gq616/8mtcpCp4G1IMXH6F5CeRPoQcOCTZPP+PwLa5B8UnhTw+1jOilxVami0wqrcorWuO/D3CEy3Q7x2UC7lSu001pAN36InhppS42lSwLs1RXdImxXAVUNC0C8AayH1zEZLfbGvz27b5Tnn3j08KeXxIyMQuQvI6M1Vf6yjNWhrRlxH9tmlxuMQq3sTIrUZj0wF6XQ31lwqK8Qi+Krp4ZoVhGcG1GGa0i7kIuXX+diE57vFJIU8Al4Z2Efs2YGN5pGLcIZjRHLsFx6I0F37gOrsL2RGj9QWnGo6n/TjVo1R/ai2d6jua4ybkxhhWmxqbZAYJ+en8bUJui08KeQLmeFNjSCx2uVX6uA2lUeUNwLSOROiOlsDO79fmWrymOkBI2nWD8cdl48NhrQJ8bkJaPIbySgz0vlS7bhSSYnaUDAvobwrsuENujU8KeRosXuslUbJ3kGyAppKkpkUXKW+CDjUpiZfBcg4zKoiGrkVHu4OQ7yp8+cbHe5iPVL+WSQsBM6ir/989ZYsmI/3j4+axWtcIutWQlJ75DRO+18XR1QS9moqg30XIveOTQp4MZmoopWLw+ZMIUxfq+0by3bedZ5Csj2qGJKVFSKf4T9V2drmDkHxBUxH4aNe9feevm6H3QF1wII10poAopcbqwycpm2PpuKVG6iKeRSKeRPSmsejmNwtJ8BvrpoBwIIZgKIviax+aW8reOz4p5OlhE1jWZKXucsKm/Njn8I8WGb2H4/r8yMXc7yO8RQxT+0H+rvCmhoR05n0Hx4jPi5ynkP8UVGaoBZRsHweyIaVhvmufu10HIIX0AmaDSpEkLkK8FKEyI05lhnE+Xxw5JlJIiaeQQko8hRRS4imkkBJPIYWUeAjgF8P0lq9e2mXIAAAAAElFTkSuQmCC" InformativeScreenshot="c246eadbf81e463c39a5ccb9437f1350.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Internet Banking Banco Inter' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="371, 223, 160, 25" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;nav&amp;gt;ul&amp;gt;li&amp;gt;div&amp;gt;span&amp;gt;span' parentid='Menu' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='Menu' tag='SPAN' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKQAAAAdCAYAAAAkcMf8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGZSURBVHhe7dqxS8NAFIBx/39c1EFwcLYgOnQQHAoiioLoEgVRcHHRRQoOxeXskzuIL3mvl6bFw3w/ONRE3vSRctdsBKAgBImiECSKQpAoCkF28PT8Gi6vql6rengJs9lXnAiNIDMdj8/D5tZoJevk9DpOhUaQmVJMF/OnXJ8lM3Z2j+JUaASZKQXZ16rm/FcEmSk94foiSB9BOtaxiSFIH0Ea1rWJSdfQjiANKZz6hmSZJTPqmxiC9BGkISec6n7xmaKekzN3yAjSsCicm7vHn/vycfz2/hGvNuk5i+YOHUEavHAkwnRf1uTsNt5p0nP03/iNIA1eOHLdi7BOz/HmgiBNXjgHh5Owtz8Oo/lPeVpOp5/xTpOeI79v802NiSANXpASoBwLSZgSl4RpaQuS77JtBGnwgqyTj27v//ScnJ35kBGkwQsyRZiW98Tz5qCJIA1eSHLMk6KUw28PQXZDkIackJY5GIePIA0ppLYXJrosmcGuOh9BGnhD/G8QpENeP9MvS3Rd7Kq7IUgUhSBRFIJEUQgSBQnhG6XEDNKP7FHUAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NHover.Target>
+            </uix:NHover>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Depósito por boleto'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0d382a81-0d28-485d-8fa7-8883035573c0" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://contadigitalpj.bancointer.com.br/comum/home.jsf" DesignTimeRectangle="779, 436, 109, 15" ElementType="Text" FriendlyName="'Depósito por boleto'" FullSelectorArgument="&lt;webctrl aaname='Depósito por boleto ' parentid='Menu' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Depósito por boleto ' parentid='Menu' tag='A' type='' check:text='Depósito por boleto' /&gt;" Guid="7ad91312-f86e-47f5-b228-4b459f6946d5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHEAAAATCAYAAACnQuKBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQ8SURBVGhD7Vdha+JYFN3/z36ZLx2YpQUHAgqyYTZsxEiFYLcQLOK0OCUowbYqm64WA6FVIpw9L3lqtJpo2t12igeEPB/35tx77r3v5Rcc8NPjIOIHwEHED4CDiB8A/7+IgYu2PcCTXB7wcixF9G2UCjqUQjn85VUTpu2+crJncM/KUFueXG9H0LWgnvUQhKsZnvxH+fzGYJ4M09mfy6CB0uVQLpKwf6xLEb06lOL3hWiB10PT0JEznFcUcojrSwe+XCVi4uJ29CgXLqoFE+33oKLIk/pjbxGDrgnltCdXSdg/1q0iRvBxpeow7mZyTfgU1zSh6eernTqycdEZwm1Z0DQTRt3BOE5kYVeD2Yp3+Ax+twFDr0I1LFyPptHfob8HPvhw2L1fPn1D3jhHcyC5bPUXQ1ZOoV0P7XoN2tlaEUsRR+Rc0mlr/kB/IvcEtvh8JuLGPGaLNUVEvtyuIme6cnEDo1CB2XEx9ga4Yqfmz6I9QfJYqUBr3GDkDeHUK8hpdtR1kxuO6jKqCzuO7LNBVM33Ft9rwfF8+Pc2tEINjtjo1hZBB56D0tcKLkYensRekr8YsnISdl9OKqjy7B77sqjmEHk60SmeDdd7QN8mz0Kd/UOk+FyImJTHDLGmioi7c+R0J3z0GxXkG/HzrEcyTDqfBMkj2i9HpY9msQxzBIwbfHFddNUcA1SVKq5YwWGRGDfPBIiLuD5ikvzFkZkT7QSnjWCecic13MqlmCS3pxS1M0v1OY8nKY9ZYk3vxA4DCl8+g2P8jqOvvPQUSSL8lXH8WwXNNZIRZuiHwU1pV14dydxr66yuez7yttrkc46VqZ420J6P060iCh4J/mLIyum5XQwiT2tnYtCqMNH/7OgzOY9ZYk0RkVXGVldtkViRgDK0btzhEoLkMTt2GZwgoKN0N0XfjCp1iUeetWVY8WIMfLg8Z4ocJU3xf4KIO/kjsnJKFbHQwFguBXx2S/7S29Fnch6zxJog4hSjFrtwPu+JgKNVmZ8pApzXFzxvhI0geXTCl8/bfNKBqkRkhF2O1bsIfNRAnn451Xhjt2B15+fOFNeavEitiDiEWajiWqqR5C+OrJzSRMx9ZhJHMrGcJCbPLIuGu/pMymOWWFdEzH3+RtE4g/m9mFN42BrfV29erIJ+nWeYGH28TSoKW70TlURIUrdQ4nhQtfnenCYrX1wqhJ3G0UOSzXuZBE9cZnQUedNTi/xO1e2I8IqI/L6sc+TwkmLY4n0J/mLIyilNxLzKwqNNkT7zzJPacGW37+pzex6zxLoUcR9w9I09b/VcWJCcwudeeLNaR2i36UNWfOA+YDx5LsQKAtquvHSbvwgv45QGcubt1H+Jzw15XGCPWEMR/3Yf8Ounwot+8UrbtP8Wv/fI6bV+f/z5VxiXQLZO3AR+31zdxU7b94D3yOk/wOuJeMCb4SDiTw/gX0nixYpk0e8kAAAAAElFTkSuQmCC" InformativeScreenshot="af63c15a5254688685035533c47c95eb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Internet Banking Banco Inter' /&gt;" SearchSteps="Selector, FuzzySelector" />
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ6SURBVDhPtZPbS9NxGMbfC6GQEC8ipC4K7GCnmyDJDkhO1LK1cst5mM7luekqzApLgw5iIKQrMBdRQRlBdKHSRR7aPIs68zCpUGerNK0s+wee3nf7rcSIrrp4br78Ps/zfr/P+6Pxo4QJLWHyGCuR4E4iTKUQ3qWy0giedMJ7IyuD8OE4K5PwUZTlE40nsIHuT9gjsB80KaBA2YTpHEW5bPBPmFO9iX6QoZk8Vr5PJKO79QwnL4ElVWBOnRZ4EfjpBMtMmC0QA4bdDE/577w4WWBOnRFYAWcVcLaQMGdhg1+jGwjOlOVoK9qFW5YjOJOTioKsNGQZdDBoVMiPDsUdTRBGsgMwd5Lw+ZRPJKPbtYG4bT6Ixoe16La/wNuhPrhdA3jj7MRorwNj/e3oa29GrbUSFpMWZbptGCwMxpciNqhLXIeCTAPsDjsGux1w9XdgcrQfPS+fIz1RDVNyAga7WuB57cQEn485u1FxvQJp+sOoN68HbdwUhnjVPrzqaIJroBPOzhYMc6ooz5QES66Rzzsw1CMBrV4zV28r1DGRCAvbDLJGrcCGNSsRFxuLhqd1vg945GeP7uJAZDjioyLQ8OQ+nzejvakePW1NsFqrsT10NWp1gSB5PIc+EMYdwdi9dS1StGpcLilCVXkpaiqvwnajHLbqCtyrqcID201cKc6FOSoEXXkBWLjIbyC9y6pKbcMZy2A7FARjRAhUO7cgem84NHH7YUyIwTXjHjxOX4URrvL7BfLCC2V+g8W9K51L19KzVCWv/bWYMH+O8K3kN/zj0lID3jhZGu/CiIH0fVoxOMvweSW91Af7DORvEwNl3/9mMP9/DAg/AU7nYvrs9WhYAAAAAElFTkSuQmCC" InformativeScreenshot="0c1f19fe08af2ee88d17d37f98653009.png" Selector="&lt;html app='chrome.exe' title='Internet Banking Banco Inter'/&gt;" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
