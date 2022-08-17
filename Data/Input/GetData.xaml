@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>989,1046</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>991,1046</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Data_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="62">
@@ -138,13 +138,13 @@
 	fin.VALOR,
 	fin.COBRANCA,
 	fin.DATA_VENCIMENTO,
-	fin.SITUACAO
+	fin.DATA_PAGAMENTO
 	
 
 FROM financeiro_cobranca fin
 INNER JOIN cliente cli ON cli.ID = fin.ID_CLIENTE
 
-WHERE fin.SITUACAO = '' </InArgument>
+WHERE fin.DATA_PAGAMENTO = '' </InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
               </scg:List>

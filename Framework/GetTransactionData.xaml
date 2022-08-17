@@ -5,12 +5,12 @@
     <x:Property sap2010:Annotation.AnnotationText="This variable can be used in case transactions are stored in a DataTable (for example, after being retrieved from a spreadsheet)." Name="io_TransactionData" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="in_Connection" Type="InArgument(ui:DatabaseConnection)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="io_Config" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
-    <x:Property Name="out_BoletosLista" Type="OutArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="out_BoletosLista" Type="InOutArgument(scg:Dictionary(x:String, x:String))" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>989,2775</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>991,2612</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetTransactionData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
@@ -100,10 +100,9 @@
       <AssemblyReference>UiPath.GSuite.Activities.Design</AssemblyReference>
       <AssemblyReference>Evoluze.Roboluze</AssemblyReference>
       <AssemblyReference>Holidays</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Get a transaction item from a specified source (e.g., Orchestrator queues, spreadsheets, databases, mailboxes or web APIs). &#xA;&#xA;If there are no transaction items remaining, out_TransactionItem is set to Nothing, which leads to the End Process state. &#xA;&#xA;For cases in which there is only a single transaction (i.e., a linear process), use an If activity to check whether the argument in_TransactionNumber has the value 1 (meaning it is the first and only transaction) and assign the transaction item to out_TransactionItem. For any other value of in_TransactionNumber, out_TransactionItem should be set to Nothing.&#xA;&#xA;If there are multiple transactions, use the argument in_TransactionNumber as an index to retrieve the correct transaction to be processed. If there are no more transactions left, it is necessary to set out_TransactionItem to Nothing, thus ending the process." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="766,2710" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Get a transaction item from a specified source (e.g., Orchestrator queues, spreadsheets, databases, mailboxes or web APIs). &#xA;&#xA;If there are no transaction items remaining, out_TransactionItem is set to Nothing, which leads to the End Process state. &#xA;&#xA;For cases in which there is only a single transaction (i.e., a linear process), use an If activity to check whether the argument in_TransactionNumber has the value 1 (meaning it is the first and only transaction) and assign the transaction item to out_TransactionItem. For any other value of in_TransactionNumber, out_TransactionItem should be set to Nothing.&#xA;&#xA;If there are multiple transactions, use the argument in_TransactionNumber as an index to retrieve the correct transaction to be processed. If there are no more transactions left, it is necessary to set out_TransactionItem to Nothing, thus ending the process." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="766,2547" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -111,12 +110,12 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message Get Transaction Item" sap:VirtualizedContainerService.HintSize="724,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Get the transaction item&quot;]" />
-    <ui:RetryScope DisplayName="Retry Get transaction item" sap:VirtualizedContainerService.HintSize="724,2067" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="[Cint(io_Config(&quot;RetryNumberGetTransactionItem&quot;))]">
+    <ui:RetryScope DisplayName="Retry Get transaction item" sap:VirtualizedContainerService.HintSize="724,1904" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="[Cint(io_Config(&quot;RetryNumberGetTransactionItem&quot;))]">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <TryCatch DisplayName="Try Catch Get transaction item" sap:VirtualizedContainerService.HintSize="682,1893" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+          <TryCatch DisplayName="Try Catch Get transaction item" sap:VirtualizedContainerService.HintSize="682,1730" sap2010:WorkflowViewState.IdRef="TryCatch_2">
             <TryCatch.Try>
-              <If Condition="[in_TransactionNumber = 1]" DisplayName="If GetTransactionData" sap:VirtualizedContainerService.HintSize="644,1666" sap2010:WorkflowViewState.IdRef="If_2">
+              <If Condition="[in_TransactionNumber = 1]" DisplayName="If GetTransactionData" sap:VirtualizedContainerService.HintSize="644,1503" sap2010:WorkflowViewState.IdRef="If_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -124,7 +123,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="608,1480" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                  <Sequence sap:VirtualizedContainerService.HintSize="608,1317" sap2010:WorkflowViewState.IdRef="Sequence_20">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="BoletosLista" />
                       <Variable x:TypeArguments="x:Boolean" Name="CancelarOperacao" />
@@ -142,36 +141,38 @@
                         <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_TransactionData">[io_TransactionData]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <Switch x:TypeArguments="x:String" DisplayName="Switch Tipo Processo" Expression="[io_Config(&quot;TIPO_PROCESSO&quot;).ToString]" sap:VirtualizedContainerService.HintSize="566,1236" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                    <Switch x:TypeArguments="x:String" DisplayName="Switch Tipo Processo" Expression="[io_Config(&quot;TIPO_PROCESSO&quot;).ToString]" sap:VirtualizedContainerService.HintSize="566,1073" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence x:Key="CONCILIACAO" sap:VirtualizedContainerService.HintSize="376,266" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                      <Sequence x:Key="CONCILIACAO" sap:VirtualizedContainerService.HintSize="526,609" sap2010:WorkflowViewState.IdRef="Sequence_37">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke FlowGetExtrato workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Process\FlowGetExtrato.xaml">
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke FlowGetExtrato workflow" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Process\FlowGetExtrato.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="out_Boletos">
-                              <mva:VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="BoletosLista" />
-                            </OutArgument>
-                            <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_Config">
-                              <mva:VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="io_Config" />
-                            </InOutArgument>
-                            <OutArgument x:TypeArguments="x:Boolean" x:Key="out_CancelarOperacao">
-                              <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="CancelarOperacao" />
-                            </OutArgument>
+                            <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="out_Boletos">[BoletosLista]</OutArgument>
+                            <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_Config">[io_Config]</InOutArgument>
+                            <OutArgument x:TypeArguments="x:Boolean" x:Key="out_CancelarOperacao">[CancelarOperacao]</OutArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
-                        <If Condition="[CancelarOperacao]" DisplayName="If Cancelar Operacao" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="If_10">
+                        <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[out_BoletosLista]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[BoletosLista]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <If Condition="[CancelarOperacao]" DisplayName="If Cancelar Operacao" sap:VirtualizedContainerService.HintSize="484,265" sap2010:WorkflowViewState.IdRef="If_10">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
@@ -189,14 +190,21 @@
                           </If.Else>
                         </If>
                       </Sequence>
-                      <Sequence x:Key="PENDENTE" sap:VirtualizedContainerService.HintSize="526,1031" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                      <Sequence x:Key="PENDENTE" sap:VirtualizedContainerService.HintSize="526,868" sap2010:WorkflowViewState.IdRef="Sequence_40">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:AddDataColumn x:TypeArguments="x:Boolean" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="BAIXAR" DataTable="[io_TransactionData]" DefaultValue="False" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="484,185" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
-                        <ufa:FormActivity CreateFormActivityFileName="{x:Null}" CreateFormActivityFilePath="{x:Null}" FormFieldsInputData="{x:Null}" FormFieldsOutputData="{x:Null}" FormHeight="{x:Null}" FormTitle="{x:Null}" FormWidth="{x:Null}" IconPath="{x:Null}" LocalCSSFilePath="{x:Null}" SelectedButton="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" CreateFormId="5e6a37ad-e734-48fb-b021-051aa2a27489" DisableMaximizeButton="False" DisableMinimizeButton="False" DisableSanitize="False" Dismissed="[Cancelar]" FormSchema="%[{&quot;label&quot;:&quot;dataGrid&quot;,&quot;disableAddingRemovingRows&quot;:true,&quot;hidden&quot;:true,&quot;hideLabel&quot;:true,&quot;redrawOn&quot;:&quot;data&quot;,&quot;key&quot;:&quot;dataGrid2&quot;,&quot;type&quot;:&quot;editgrid&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[]},{&quot;label&quot;:&quot;Data Grid&quot;,&quot;disableAddingRemovingRows&quot;:true,&quot;reorder&quot;:false,&quot;addAnotherPosition&quot;:&quot;bottom&quot;,&quot;layoutFixed&quot;:false,&quot;enableRowGroups&quot;:false,&quot;initEmpty&quot;:false,&quot;hideLabel&quot;:true,&quot;key&quot;:&quot;dataGrid&quot;,&quot;type&quot;:&quot;datagrid&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;columns&quot;:[{&quot;components&quot;:[{&quot;label&quot;:&quot;Empresa&quot;,&quot;hideLabel&quot;:true,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;EMPRESA&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;width&quot;:12}],&quot;width&quot;:3,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0,&quot;size&quot;:&quot;md&quot;},{&quot;components&quot;:[{&quot;label&quot;:&quot;NF&quot;,&quot;hideLabel&quot;:true,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;NF&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;width&quot;:12}],&quot;width&quot;:1,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0,&quot;size&quot;:&quot;md&quot;},{&quot;components&quot;:[{&quot;label&quot;:&quot;Cobranca&quot;,&quot;hideLabel&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;COBRANCA&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;width&quot;:12}],&quot;size&quot;:&quot;md&quot;,&quot;width&quot;:3,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0},{&quot;components&quot;:[{&quot;label&quot;:&quot;Vencimento&quot;,&quot;hideLabel&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;DATA_VENCIMENTO&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;width&quot;:12}],&quot;size&quot;:&quot;md&quot;,&quot;width&quot;:2,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0},{&quot;components&quot;:[{&quot;label&quot;:&quot;Valor&quot;,&quot;hideLabel&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;VALOR&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;width&quot;:12}],&quot;size&quot;:&quot;md&quot;,&quot;width&quot;:2,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0},{&quot;components&quot;:[{&quot;label&quot;:&quot;Baixar&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;baixar&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;defaultValue&quot;:false,&quot;hideOnChildrenHidden&quot;:false,&quot;width&quot;:12}],&quot;size&quot;:&quot;md&quot;,&quot;width&quot;:1,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0}],&quot;autoAdjust&quot;:true,&quot;key&quot;:&quot;columns&quot;,&quot;type&quot;:&quot;columns&quot;,&quot;input&quot;:false,&quot;tableView&quot;:true,&quot;label&quot;:&quot;Empresas&quot;}]},{&quot;type&quot;:&quot;button&quot;,&quot;label&quot;:&quot;Submit&quot;,&quot;key&quot;:&quot;submit&quot;,&quot;disableOnInvalid&quot;:true,&quot;input&quot;:true,&quot;alwaysEnabled&quot;:true,&quot;tableView&quot;:true}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;100120&quot;,&quot;Name&quot;:&quot;Default&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/uipath.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/uipath.png&quot;,&quot;OverrideCssUrl&quot;:&quot;../../assets/css/themes/uipath.custom.css&quot;,&quot;UserStyleOverrides&quot;:&quot;&quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:false,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" GenerateInputFields="False" sap:VirtualizedContainerService.HintSize="484,209" sap2010:WorkflowViewState.IdRef="FormActivity_1" IsReadOnly="False" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False" StartAsMinimized="False">
+                        <ui:AddDataColumn x:TypeArguments="x:Boolean" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="BAIXAR" DataTable="[io_TransactionData]" DefaultValue="False" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:AddDataColumn>
+                        <ufa:FormActivity CreateFormActivityFileName="{x:Null}" CreateFormActivityFilePath="{x:Null}" FormFieldsInputData="{x:Null}" FormFieldsOutputData="{x:Null}" FormHeight="{x:Null}" FormTitle="{x:Null}" FormWidth="{x:Null}" IconPath="{x:Null}" LocalCSSFilePath="{x:Null}" SelectedButton="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" CreateFormId="5e6a37ad-e734-48fb-b021-051aa2a27489" DisableMaximizeButton="False" DisableMinimizeButton="False" DisableSanitize="False" Dismissed="[Cancelar]" FormSchema="%[{&quot;label&quot;:&quot;Data Grid&quot;,&quot;disableAddingRemovingRows&quot;:true,&quot;reorder&quot;:false,&quot;addAnotherPosition&quot;:&quot;bottom&quot;,&quot;layoutFixed&quot;:false,&quot;enableRowGroups&quot;:false,&quot;initEmpty&quot;:false,&quot;hideLabel&quot;:true,&quot;key&quot;:&quot;dataGrid&quot;,&quot;type&quot;:&quot;datagrid&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;columns&quot;:[{&quot;components&quot;:[{&quot;label&quot;:&quot;Empresa&quot;,&quot;hideLabel&quot;:true,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;EMPRESA&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;width&quot;:12}],&quot;width&quot;:3,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0,&quot;size&quot;:&quot;md&quot;},{&quot;components&quot;:[{&quot;label&quot;:&quot;NF&quot;,&quot;hideLabel&quot;:true,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;NF&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;width&quot;:12}],&quot;width&quot;:1,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0,&quot;size&quot;:&quot;md&quot;},{&quot;components&quot;:[{&quot;label&quot;:&quot;Cobranca&quot;,&quot;hideLabel&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;COBRANCA&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;width&quot;:12}],&quot;size&quot;:&quot;md&quot;,&quot;width&quot;:3,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0},{&quot;components&quot;:[{&quot;label&quot;:&quot;Vencimento&quot;,&quot;hideLabel&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;DATA_VENCIMENTO&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;width&quot;:12}],&quot;size&quot;:&quot;md&quot;,&quot;width&quot;:2,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0},{&quot;components&quot;:[{&quot;label&quot;:&quot;Valor&quot;,&quot;hideLabel&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;VALOR&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;width&quot;:12}],&quot;size&quot;:&quot;md&quot;,&quot;width&quot;:2,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0},{&quot;components&quot;:[{&quot;label&quot;:&quot;Baixar&quot;,&quot;tableView&quot;:true,&quot;defaultValue&quot;:false,&quot;key&quot;:&quot;BAIXAR&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false,&quot;width&quot;:12}],&quot;size&quot;:&quot;md&quot;,&quot;width&quot;:1,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0}],&quot;autoAdjust&quot;:true,&quot;key&quot;:&quot;columns&quot;,&quot;type&quot;:&quot;columns&quot;,&quot;input&quot;:false,&quot;tableView&quot;:true,&quot;label&quot;:&quot;Empresas&quot;}]},{&quot;type&quot;:&quot;button&quot;,&quot;label&quot;:&quot;Submit&quot;,&quot;key&quot;:&quot;submit&quot;,&quot;disableOnInvalid&quot;:true,&quot;input&quot;:true,&quot;alwaysEnabled&quot;:true,&quot;tableView&quot;:true}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;100120&quot;,&quot;Name&quot;:&quot;Default&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/uipath.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/uipath.png&quot;,&quot;OverrideCssUrl&quot;:&quot;../../assets/css/themes/uipath.custom.css&quot;,&quot;UserStyleOverrides&quot;:&quot;&quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:false,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" GenerateInputFields="False" sap:VirtualizedContainerService.HintSize="484,209" sap2010:WorkflowViewState.IdRef="FormActivity_1" IsReadOnly="False" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False" StartAsMinimized="False">
                           <ufa:FormActivity.Body>
                             <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
                               <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_38">

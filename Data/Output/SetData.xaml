@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>989,1062</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>991,1062</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SetData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -117,7 +117,7 @@
               <InArgument x:TypeArguments="x:String" xml:space="preserve">UPDATE financeiro_cobranca SET
 COBRANCA = '#COBRANCA',
 DATA_VENCIMENTO = '#DATA_VENCIMENTO',
-SITUACAO = '#SITUACAO',
+DATA_PAGAMENTO = '#DATA_PAGAMENTO',
 VALOR = '#VALOR'
 
 WHERE 	ID_CLIENTE = #ID_CLIENTE
@@ -147,7 +147,7 @@ AND	PERIODO = '#PERIODO'</InArgument>
               <OutArgument x:TypeArguments="x:String">[QuerySQL]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[QuerySQL.Replace("#SITUACAO",in_TransactionItem("SITUACAO").ToString)]</InArgument>
+              <InArgument x:TypeArguments="x:String">[QuerySQL.Replace("#DATA_PAGAMENTO",in_TransactionItem("DATA_PAGAMENTO").ToString)]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
